@@ -66,6 +66,15 @@ form {
   border-left: 4px solid #5ec0f5;
 }
 
+.activity-ideas em {
+  color: #5664dd;
+}
+
+.activity-ideas h1 {
+  color: black;
+  font-size: 16px;
+}
+
 footer {
   text-align: center;
   margin-top: 30px;
