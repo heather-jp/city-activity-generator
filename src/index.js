@@ -1,6 +1,4 @@
 function displayActivities(response) {
-  console.log("activity generated");
-
   new Typewriter("#activity-ideas", {
     strings: response.data.answer,
     autoStart: true,
@@ -22,10 +20,6 @@ function generateActivityIdeas(event) {
   let activityIdeasElement = document.querySelector("#activity-ideas");
   activityIdeasElement.classList.remove("hidden");
   activityIdeasElement.innerHTML = `<span class="blink">⌛</span> Generating activity ideas for you during your stay in ${instructionsInput.value}`;
-
-  console.log("Generating activity");
-  console.log(`Prompt: ${prompt}`);
-  console.log(`Context: ${context}`);
 
   axios.get(apiUrl).then(displayActivities);
 }
