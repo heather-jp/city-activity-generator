@@ -28,13 +28,24 @@ h1 {
   color: white;
 }
 
-form {
-  padding: 25px;
+.form-container {
   background-color: white;
+  margin-bottom: 30px;
   border-radius: 15px;
   box-shadow: 0px 2px 7px 1px rgba(0, 0, 0, 0.35);
+  padding: 25px;
+}
+
+form {
   display: flex;
-  margin-bottom: 30px;
+}
+
+.hint {
+  line-height: 1.5;
+  font-size: 12px;
+  margin-top: 5px;
+  margin-left: 8px;
+  opacity: 0.6;
 }
 
 .instructions {
@@ -66,6 +77,10 @@ form {
   border-left: 4px solid #5ec0f5;
 }
 
+.hidden {
+  display: none;
+}
+
 .activity-ideas em {
   color: #5664dd;
 }
@@ -80,4 +95,16 @@ footer {
   margin-top: 30px;
   font-size: 12px;
   color: white;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.blink {
+  animation: blink 1s step-start 0s infinite;
+  font-size: 28px;
+  font-weight: bold;
 }

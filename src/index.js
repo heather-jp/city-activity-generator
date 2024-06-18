@@ -5,6 +5,7 @@ function displayActivities(response) {
     strings: response.data.answer,
     autoStart: true,
     delay: 1,
+    cursor: "",
   });
 }
 
@@ -18,6 +19,10 @@ function generateActivityIdeas(event) {
   let prompt = `User instructions: Generate activities that the user can do in ${instructionsInput.value} without travelling outside of that city.`;
   let apiUrl = `https://api.shecodes.io/ai/v1/generate?prompt=${prompt}&context=${context}&key=${apiKey}`;
 
+  let activityIdeasElement = document.querySelector("#activity-ideas");
+  activityIdeasElement.classList.remove("hidden");
+  activityIdeasElement.innerHTML = `<span class="blink">⌛</span> Generating activity ideas for you during your stay in ${instructionsInput.value}`;
+
   console.log("Generating activity");
   console.log(`Prompt: ${prompt}`);
   console.log(`Context: ${context}`);
@@ -25,7 +30,7 @@ function generateActivityIdeas(event) {
   axios.get(apiUrl).then(displayActivities);
 }
 
-let activityFormelement = document.querySelector(
+let activityFormElement = document.querySelector(
   "#activity-idea-generator-form"
 );
-activityFormelement.addEventListener("submit", generateActivityIdeas);
+activityFormElement.addEventListener("submit", generateActivityIdeas);

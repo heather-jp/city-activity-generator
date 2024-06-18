@@ -15,19 +15,23 @@
       </header>
 
       <main>
-        <form id="activity-idea-generator-form">
-          <input
-            type="text"
-            placeholder="Enter the name of the city you are visiting"
-            autofocus
-            required
-            autocomplete="off"
-            class="instructions"
-            id="user-instructions"
-          />
-          <input type="submit" class="submit-button" />
-        </form>
-        <div class="activity-ideas" id="activity-ideas"></div>
+        <div class="form-container">
+          <form id="activity-idea-generator-form">
+            <input
+              type="text"
+              placeholder="Enter the name of the city you are visiting"
+              autofocus
+              required
+              autocomplete="off"
+              class="instructions"
+              id="user-instructions"
+            />
+            <input type="submit" class="submit-button" />
+          </form>
+          <div class="hint">i.e: Paris, London, Berlin, New York</div>
+        </div>
+
+        <div class="activity-ideas hidden" id="activity-ideas"></div>
       </main>
 
       <footer>
